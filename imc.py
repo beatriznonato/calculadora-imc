@@ -1,37 +1,5 @@
-def imc(peso,altura):
-    imc = peso / (altura*altura)
-    return imc
 
-def classeImc(sexo,peso,altura):
-    valorImc = imc(peso,altura)
-
-    if sexo == 'm':
-        if valorImc < 20.7:
-            return "Abaixo do peso"
-        elif valorImc >= 20.7 and valorImc < 26.4:
-            return "Peso normal"
-        elif valorImc >= 26.4 and valorImc < 27.8:
-            return "Marginalmente acima do peso"
-        elif valorImc >= 27.8 and valorImc < 31.1:
-            return "Acima do peso ideal"
-        elif valorImc >= 31.1:
-            return "Obesidade"
-        else:
-            return "Erro de cálculo. Entre em contato com o administrador"
-
-    if sexo == 'f':
-        if valorImc < 19.1:
-            return "Abaixo do peso"
-        elif valorImc >= 19.1 and valorImc < 25.8:
-            return "Peso normal"
-        elif valorImc >= 25.8 and valorImc < 27.3:
-            return "Marginalmente acima do peso"
-        elif valorImc >= 27.3 and valorImc < 32.3:
-            return "Acima do peso ideal"
-        elif valorImc >= 32.3:
-            return "Obesidade"
-        else:
-            return "Erro de cálculo. Entre em contato com o administrador"
+import func as f
 
 print('Vamos calcular seu IMC?')
 
@@ -71,8 +39,8 @@ while validAltura == False:
         print("Altura inválida. Use apenas números e separe decimais com '.'.")
 
 
-resultado1 = str(imc(peso,altura))
-resultado2 = classeImc(sexo,peso,altura)
+resultado1 = str(f.imc(peso,altura))
+resultado2 = f.classeImc(sexo,peso,altura)
 
 print('O seu IMC é:', resultado1[0:5])
 print('A sua classificação é:', resultado2)
